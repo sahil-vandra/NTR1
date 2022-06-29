@@ -1,7 +1,5 @@
 import json
-
 import boto3
-
 
 def assign_lf_tag():
     client = boto3.client('lakeformation', region_name=AWS_REGION)
@@ -24,7 +22,6 @@ def assign_lf_tag():
                 f"Successfully assign {value['LFTagKey']} Tag Key and {value['LFTagValues']} Tag Value to {key.format(ENV, PIPELINE_NAME)} database")
         except Exception as exception:
             print(f'Exception : {exception}')
-
 
 if __name__ == "__main__":
     AWS_REGION = "us-east-1"
